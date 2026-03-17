@@ -1,0 +1,14 @@
+# Compiled files
+**/myexe
+**/*.exe
+*.exe
+*.out
+*.o
+
+# Editor / temp files
+*.swp
+*.log
+
+# OS files
+.DS_Store
+
