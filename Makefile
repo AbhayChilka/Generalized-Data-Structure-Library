@@ -1,3 +1,13 @@
+CC = g++
+
 app:
-	g++ test/test.cpp -Iinclude -o app
+	$(CC) test/test.cpp -Iinclude -o app
+
+clean:
+	rm -f app *.o
+
+run:	
+	./app
+
+
 	
