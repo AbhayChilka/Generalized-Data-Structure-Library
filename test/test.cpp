@@ -32,5 +32,17 @@ int main()
     cnt = obj.Count();
     cout<< "Total elemets are : "<<cnt<<endl;
 
+    obj.InsertAtPos( 1, 2);
+    obj.Display();
+
+    cnt = obj.Count();
+    printf("Number of elements are : %d\n",cnt);
+
+    obj.DeleteAtPos(2);
+    obj.Display();
+
+    cnt = obj.Count();
+    printf("Number of elements are : %d\n",cnt);
+
     return 0;
 }

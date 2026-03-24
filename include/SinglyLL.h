@@ -137,5 +137,86 @@ public:
         }
         return iCnt;    
     }
+
+    void InsertAtPos( T No, int iPos)
+    {
+        int iLength = 0;
+        node<T>* newn = NULL;
+        node<T>* temp = NULL;
+        int i = 0;
+
+        iLength = Count();
+
+        if((iPos < 1) || (iPos > iLength+1))
+        {
+            printf("Invalid position\n");
+            return;
+        }
+
+        if(iPos == 1)
+        {
+            InsertFirst(No);
+        }
+        else if(iPos == iLength+1)
+        {
+            InsertLast(No);
+        }
+        else
+        {
+            newn = new node<T>;
+
+            newn->data = No;
+            newn->next = NULL;
+
+            temp = first;
+
+            for(i = 1; i < iPos-1; i++)
+            {
+                temp = temp->next;
+            }
+
+            newn->next = temp -> next;
+            temp->next = newn;
+        }
+    }
+
+    void DeleteAtPos(int iPos)
+    {
+        int iLength = 0;
+        node<T>* temp1 = NULL;
+        node<T>* temp2 = NULL;
+        int i = 0;
+
+        iLength = Count();
+
+        if((iPos < 1) || (iPos > iLength+1))
+        {
+            printf("Invalid position\n");
+            return;
+        }
+
+        if(iPos == 1)
+        {
+            DeleteFirst();
+        }
+        else if(iPos == iLength)
+        {
+            DeleteLast();
+        }
+        else
+        {
+            temp1 = first;
+
+            for(i = 1; i < iPos-1; i++)
+            {
+                temp1 = temp1->next;
+            }
+
+            temp2 = temp1 -> next;
+
+            temp1->next = temp2 -> next;
+            delete(temp2);
+        }
+    }
 };
 
