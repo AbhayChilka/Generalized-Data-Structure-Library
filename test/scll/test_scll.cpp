@@ -1,10 +1,10 @@
-#include "SinglyLL.h"
+#include "linkedlist/SinglyCircular.h"
 
 int main()
 {
     int cnt = 0;
 
-    SinglyLL<int> obj;
+    SinglyCircular<int> obj;
 
     obj.InsertFirst(20);
     obj.InsertFirst(10);
